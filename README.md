@@ -1,7 +1,7 @@
-##Industrial Data Time Servies Prediction
+# Industrial Data Time Servies Prediction
 LSTM built using the Keras Python package to predict time series steps and sequences. Includes industrial data.
 
-##Requirements
+# Requirements
 Install requirements.txt file to make sure correct versions of libraries are being used.
 
 Python 3++
