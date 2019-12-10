@@ -14,7 +14,7 @@
 
 ### 2. 数据说明
 
-通过整理历史数据，得到如下的时间序列数据，如下图所示：
+通过整理历史数据，得到如下的时间序列数据(展示部分)，如下图所示：
 
 ![blockchain](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97.png)
 ![时间序列图](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E5%8E%9F%E5%A7%8B%E5%BA%8F%E5%88%97.png)
@@ -25,7 +25,7 @@ id列为时间序列ID，RUL列为需要预测建模的列，共计有连续的2
 
 #### 3.0  lstm算法原理
 
-参见链接：https://www.gvoidy.cn/posts/e4e448be/
+[参见链接](https://www.gvoidy.cn/posts/e4e448be/)
 
 #### 3.1 数据样本制作
 时间样本对制作，时间序列预测使用通过历史数据来预测将来的数据序列，通过将原始数据制作为X-Y的样本对，用来输入到深度学习模型中，样本制作变换形式如下所示：
@@ -136,6 +136,5 @@ class Model():
 运行代码，等到如下预测效果图（r2 score=0.956）：
 
 ![结果图](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E7%BB%93%E6%9E%9C%E5%9B%BE.png)
-
 
 
