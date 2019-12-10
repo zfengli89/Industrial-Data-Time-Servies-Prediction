@@ -39,7 +39,7 @@ def predict(data, configs, model_file):
     x_test, y_test = data.get_test_data(
         seq_len=configs['data']['sequence_length']
     )
-    predictions = model.predict_sequences_multiple(x_test, configs['data']['sequence_length'], 20)
+    predictions = model.predict_point_by_point(x_test)
     plot_results(predictions, y_test)
     print("测试集的r2 score为：{}".format(r2_score(y_test, predictions)) )
 
