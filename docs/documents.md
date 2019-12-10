@@ -15,10 +15,8 @@
 ### 2. 数据说明
 
 通过整理历史数据，得到如下的时间序列数据(展示部分)，如下图所示：
-<div style="align: center">
-<img src="https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97.png"/>
-</div>
 
+![blockchain](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97.png)
 ![时间序列图](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E5%8E%9F%E5%A7%8B%E5%BA%8F%E5%88%97.png)
 
 
@@ -139,19 +137,6 @@ class Model():
 运行代码，等到如下预测效果图（r2 score=0.956）：
 
 ![结果图](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E7%BB%93%E6%9E%9C%E5%9B%BE.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
