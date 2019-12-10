@@ -19,5 +19,5 @@ if __name__ == '__main__':
     )
     # 模型训练
     model = train(data, configs)
-    #
-    predict(data, configs, "model_10122019-145619")
+    # 模型预测
+    predict(data, configs, model)

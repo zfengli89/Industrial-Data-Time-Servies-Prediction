@@ -8,6 +8,7 @@ import os, math, pickle
 from lstm.model import Model
 import datetime as dt
 import matplotlib.pyplot as plt
+from sklearn.metrics import r2_score
 
 def train(data, configs):
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
@@ -40,6 +41,7 @@ def predict(data, configs, model_file):
     )
     predictions = model.predict_sequences_multiple(x_test, configs['data']['sequence_length'], 20)
     plot_results(predictions, y_test)
+    print("测试集的r2 score为：{}".format(r2_score(y_test, predictions)) )
 
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
