@@ -14,13 +14,14 @@
 
 ### 2. 数据说明
 
-通过整理历史数据，得到如下的时间序列数据(展示部分)，如下图所示：
+通过整理历史数据，得到如下的时间序列数据(展示部分)，其中，id列为时间序列ID，RUL列为需要预测建模的列，共计有连续的20631个时间序列样本点：
 
 ![blockchain](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97.png)
+
+绘制时序图如下所示：
+
 ![时间序列图](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E5%8E%9F%E5%A7%8B%E5%BA%8F%E5%88%97.png)
 
-
-id列为时间序列ID，RUL列为需要预测建模的列，共计有连续的20631个时间序列样本点。
 
 ### 3. 基于keras的lstm的时间序列建模
 
@@ -137,6 +138,4 @@ class Model():
 运行代码，等到如下预测效果图（r2 score=0.956）：
 
 ![结果图](https://github.com/zfengli89/Industrial-Data-Time-Servies-Prediction/blob/master/docs/picture/%E7%BB%93%E6%9E%9C%E5%9B%BE.png)
-
-
 
