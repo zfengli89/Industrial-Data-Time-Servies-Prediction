@@ -10,7 +10,7 @@ import os
 from lstm.run import train, predict
 
 if __name__ == '__main__':
-    configs = json.load(open('config.json', 'r'))
+    configs = json.load(open('./config/lstm_config.json', 'r'))
     data = DataLoader(
         os.path.join('data', configs['data']['train_filename']),
         configs['data']['train_test_split'],

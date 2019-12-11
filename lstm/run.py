@@ -10,12 +10,14 @@ import datetime as dt
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 
+
 def train(data, configs):
     if not os.path.exists(configs['model']['save_dir']): os.makedirs(configs['model']['save_dir'])
     model = Model()
     model.build_model(configs)
     # out-of memory generative training
-    steps_per_epoch = math.ceil((data.len_train - configs['data']['sequence_length']) / configs['training']['batch_size'])
+    steps_per_epoch = math.ceil(
+        (data.len_train - configs['data']['sequence_length']) / configs['training']['batch_size'])
     model.train_generator(
         data_gen=data.generate_train_batch(
             seq_len=configs['data']['sequence_length'],
@@ -28,11 +30,13 @@ def train(data, configs):
         logs_dir=configs['model']['logs_dir']
     )
     # 模型保存
-    pickle.dump(model, open(os.path.join(configs["model"]["model_dir"], "model_" + dt.datetime.now().strftime('%d%m%Y-%H%M%S')), "wb"))
+    pickle.dump(model, open(
+        os.path.join(configs["model"]["model_dir"], "model_" + dt.datetime.now().strftime('%d%m%Y-%H%M%S')), "wb"))
     return model
 
+
 def predict(data, configs, model_file):
-    if isinstance (model_file, Model):
+    if isinstance(model_file, Model):
         model = model_file
     else:
         model = pickle.load(open(os.path.join(configs["model"]["model_dir"], model_file), "rb"))
@@ -41,7 +45,8 @@ def predict(data, configs, model_file):
     )
     predictions = model.predict_point_by_point(x_test)
     plot_results(predictions, y_test)
-    print("测试集的r2 score为：{}".format(r2_score(y_test, predictions)) )
+    print("测试集的r2 score为：{}".format(r2_score(y_test, predictions)))
+
 
 def plot_results(predicted_data, true_data):
     fig = plt.figure(facecolor='white')
@@ -51,7 +56,6 @@ def plot_results(predicted_data, true_data):
     plt.legend()
     plt.show()
 
+
 def evaluate():
     pass
-
-

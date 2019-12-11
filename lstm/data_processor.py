@@ -9,7 +9,8 @@ import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
-class DataLoader():
+
+class DataLoader:
     """A class for loading and transforming data for the lstm_check_point model"""
 
     def __init__(self, filename, split, cols_X, cols_Y):
@@ -27,14 +28,14 @@ class DataLoader():
         # 数据集，供方法使用
         i_split = int(len(dataframe) * split)
         # 自身列预测自身
-        if len(cols_X)==1 and cols_X[0] == cols_Y[0]:
+        if len(cols_X) == 1 and cols_X[0] == cols_Y[0]:
             self.data_train = data_train_X[:i_split]
             self.data_test = data_train_X[i_split:]
         else:
             self.data_train = np.hstack((data_train_Y, data_train_X))[:i_split]
             self.data_test = np.hstack((data_train_Y, data_train_X))[i_split:]
-        self.len_train  = len(self.data_train)
-        self.len_test   = len(self.data_test)
+        self.len_train = len(self.data_train)
+        self.len_test = len(self.data_test)
         self.len_train_windows = None
 
     def get_test_data(self, seq_len):
@@ -85,7 +86,7 @@ class DataLoader():
     def _next_window(self, i, seq_len, flag):
         '''Generates the next data window from the given index location i'''
         if flag == "train":
-            window = self.data_train[i:i+seq_len]
+            window = self.data_train[i:i + seq_len]
         elif flag == "test":
             window = self.data_test[i:i + seq_len]
         x = window[:-1]
