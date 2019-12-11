@@ -14,9 +14,9 @@
 	"model": {
 		"loss": "mse",
 		"optimizer": "adam",
-		"save_dir": "save\\lstm_check_point",
-		"model_dir": "save\\lstm_model",
-		"logs_dir": "save\\lstm_tensor_board",
+		"save_dir": "..\\save\\lstm_check_point",
+		"model_dir": "..\\save\\lstm_model",
+		"logs_dir": "..\\save\\lstm_tensor_board",
 		"layers": [
 			{
 				"type": "lstm",

@@ -1,9 +1,10 @@
-# -*- coding=utf-8 -*-
+# coding=utf-8
 """
-    Desc:
-    Auth: LiZhifeng
-    Date: 2019/12/10
+Created on 2019/12/11 11:03
+
+@author: EwdAger
 """
+
 
 import os
 import math
@@ -11,14 +12,14 @@ import numpy as np
 import datetime as dt
 from numpy import newaxis
 from .utils import Timer
-from keras.layers import Dense, Activation, Dropout, LSTM
+from keras.layers import Dense, Activation, Dropout, GRU
 from keras.models import Sequential, load_model
 from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard
 import time
 
 
 class Model:
-    """A class for an building and inferencing an lstm model"""
+    """A class for an building and inferencing an gru model"""
 
     def __init__(self):
         self.model = Sequential()
@@ -41,8 +42,8 @@ class Model:
 
             if layer['type'] == 'dense':
                 self.model.add(Dense(neurons, activation=activation))
-            if layer['type'] == 'lstm':
-                self.model.add(LSTM(neurons, input_shape=(input_timesteps, input_dim), return_sequences=return_seq))
+            if layer['type'] == 'gru':
+                self.model.add(GRU(neurons, input_shape=(input_timesteps, input_dim), return_sequences=return_seq))
             if layer['type'] == 'dropout':
                 self.model.add(Dropout(dropout_rate))
 

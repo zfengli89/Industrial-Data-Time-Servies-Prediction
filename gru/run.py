@@ -1,11 +1,12 @@
-# -*- coding=utf-8 -*-
+# coding=utf-8
 """
-    Desc:
-    Auth: LiZhifeng
-    Date: 2019/12/10
+Created on 2019/12/11 11:04
+
+@author: EwdAger
 """
+
 import os, math, pickle
-from lstm.model import Model
+from gru.model import Model
 import datetime as dt
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score

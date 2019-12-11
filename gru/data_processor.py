@@ -1,8 +1,8 @@
-# -*- coding=utf-8 -*-
+# coding=utf-8
 """
-    Desc:
-    Auth: LiZhifeng
-    Date: 2019/12/10
+Created on 2019/12/11 11:03
+
+@author: EwdAger
 """
 
 import numpy as np

@@ -1,16 +1,17 @@
-# -*- coding=utf-8 -*-
+# coding=utf-8
 """
-    Desc:
-    Auth: LiZhifeng
-    Date: 2019/12/10
+Created on 2019/12/11 11:11
+
+@author: EwdAger
 """
-from lstm.data_processor import DataLoader
+
+from gru.data_processor import DataLoader
 import json
 import os
-from lstm.run import train, predict
+from gru.run import train, predict
 
 if __name__ == '__main__':
-    configs = json.load(open('./config/lstm_config.json', 'r'))
+    configs = json.load(open('./config/gru_config.json', 'r'))
     data = DataLoader(
         os.path.join('data', configs['data']['train_filename']),
         configs['data']['train_test_split'],
